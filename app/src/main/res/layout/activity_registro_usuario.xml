@@ -6,4 +6,46 @@
     android:layout_height="match_parent"
     tools:context=".RegistroUsuario">
 
+    <EditText
+        android:id="@+id/txtUsuarioRegistro"
+        android:layout_width="259dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="102dp"
+        android:layout_marginTop="152dp"
+        android:layout_marginEnd="99dp"
+        android:autofillHints="username"
+        android:ems="10"
+        android:hint="@string/Usuario"
+        android:inputType="textPersonName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.836"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/txtContrasennaRegistro"
+        android:layout_width="259dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="102dp"
+        android:layout_marginTop="61dp"
+        android:layout_marginEnd="99dp"
+        android:autofillHints="username"
+        android:ems="10"
+        android:hint="@string/Contrasenna"
+        android:inputType="textPersonName"
+        android:textColorHint="#757575"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.836"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtUsuarioRegistro" />
+
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="136dp"
+        android:layout_marginTop="54dp"
+        android:text="@string/Registrarse"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtContrasennaRegistro" />
 </androidx.constraintlayout.widget.ConstraintLayout>
