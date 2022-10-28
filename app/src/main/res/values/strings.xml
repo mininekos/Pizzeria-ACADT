@@ -10,4 +10,6 @@
     <string name="pepido">Realizar Pedido</string>
     <string name="configuracion">Configuracion</string>
     <string name="Registrarse">Registrarse</string>
+    <string name="Colores">Seleccione Color</string>
+    <string name="Finalizar">Finalizar</string>
 </resources>
