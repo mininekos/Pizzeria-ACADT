@@ -7,7 +7,7 @@
     tools:context=".InicioSesion">
     <!--va arriba pero peta android:background="@drawable/pizzeria_fondo"-->
     <Button
-        android:id="@+id/button"
+        android:id="@+id/btnIniciarSesion"
         android:layout_width="176dp"
         android:layout_height="48dp"
         android:layout_marginStart="117dp"
@@ -30,7 +30,7 @@
         android:hint="@string/Contrasenna"
         android:inputType="textPassword"
         android:textColorHint="#757575"
-        app:layout_constraintBottom_toTopOf="@+id/button"
+        app:layout_constraintBottom_toTopOf="@+id/btnIniciarSesion"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
@@ -57,7 +57,7 @@
         android:layout_marginTop="60dp"
         android:text="@string/no_registro"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button" />
+        app:layout_constraintTop_toBottomOf="@+id/btnIniciarSesion" />
 
     <TextView
         android:id="@+id/txtRegistrar"
@@ -69,7 +69,7 @@
         android:textAllCaps="false"
         android:textColor="#E11414"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button" />
+        app:layout_constraintTop_toBottomOf="@+id/btnIniciarSesion" />
 
     <CheckBox
         android:id="@+id/checkRecuerdame"
@@ -79,5 +79,19 @@
         android:layout_marginTop="1dp"
         android:text="@string/Recuerdame"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button" />
+        app:layout_constraintTop_toBottomOf="@+id/btnIniciarSesion" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="208dp"
+        android:layout_height="57dp"
+        android:layout_marginStart="100dp"
+        android:layout_marginTop="88dp"
+        android:layout_marginEnd="103dp"
+        android:text="@string/Kebab"
+        android:textAlignment="center"
+        android:textSize="48sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -12,4 +12,7 @@
     <string name="Registrarse">Registrarse</string>
     <string name="Colores">Seleccione Color</string>
     <string name="Finalizar">Finalizar</string>
+    <string name="Kebab">Kebab</string>
+    <string name="Siguiente">Siguiente</string>
+    <string name="Volver">Volver</string>
 </resources>
