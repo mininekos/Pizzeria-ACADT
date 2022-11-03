@@ -13,28 +13,28 @@
         android:theme="@style/Theme.Pizzeria"
         tools:targetApi="31">
         <activity
-            android:name=".PedidoTipoKebab"
+            android:name=".ActivitysPedido.PedidoTipoKebab"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:name=".Carrito"
+            android:name=".ActivitysPedido.Carrito"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:name=".Pedido"
+            android:name=".ActivitysPedido.Pedido"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:name=".Configuracion"
+            android:name=".Configuracion.Configuracion"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"

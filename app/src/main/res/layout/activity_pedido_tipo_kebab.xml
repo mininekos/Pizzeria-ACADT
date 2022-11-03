@@ -4,7 +4,80 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Pedido.PedidoTipoKebab">
+    tools:context=".ActivitysPedido.PedidoTipoKebab">
+
+    <com.example.pizzeria.RadioGroupPresonalizado.RadioGridGroup
+        android:layout_width="410dp"
+        android:layout_height="627dp"
+        tools:ignore="MissingConstraints">
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/imageView3"
+                android:layout_width="197dp"
+                android:layout_height="157dp"
+                android:src="@drawable/aceitunas_negras"
+                app:srcCompat="@drawable/durum" />
+
+            <ImageView
+                android:id="@+id/imageView2"
+                android:layout_width="213dp"
+                android:layout_height="match_parent"
+                android:src="@drawable/aceitunas_negras"
+                app:srcCompat="@drawable/doner_kebab" />
+        </TableRow>
+
+        <TableRow>
+
+            <RadioButton
+                android:id="@+id/rad1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/Durum" />
+
+            <RadioButton
+                android:id="@+id/rad2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Donner" />
+        </TableRow>
+
+        <TableRow>
+
+            <ImageView
+                android:id="@+id/imageView5"
+                android:layout_width="203dp"
+                android:layout_height="147dp"
+                android:src="@drawable/aceitunas_negras"
+                app:srcCompat="@drawable/plato_kebab" />
+
+            <ImageView
+                android:id="@+id/imageView4"
+                android:layout_width="198dp"
+                android:layout_height="match_parent"
+                android:src="@drawable/aceitunas_negras"
+                app:srcCompat="@drawable/lamacum" />
+        </TableRow>
+
+        <TableRow>
+
+            <RadioButton
+                android:id="@+id/rad5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Plato Kebab" />
+
+            <RadioButton
+                android:id="@+id/rad6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Lahmacun" />
+        </TableRow>
+
+    </com.example.pizzeria.RadioGroupPresonalizado.RadioGridGroup>
 
     <Button
         android:id="@+id/btnSiguienteTipoKebab"
@@ -90,87 +163,6 @@
                 android:layout_height="wrap_content"
                 android:text="RadioButton" />
         </RadioGroup>
-    </androidx.gridlayout.widget.GridLayout>
-
-    <androidx.gridlayout.widget.GridLayout
-        android:layout_width="409dp"
-        android:layout_height="628dp"
-        android:layout_marginStart="1dp"
-        android:layout_marginTop="1dp"
-        android:layout_marginEnd="1dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
-
-        <ImageView
-            android:id="@+id/imageView2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:layout_column="0"
-            app:layout_row="0"
-            tools:srcCompat="@tools:sample/avatars" />
-
-        <RadioButton
-            android:id="@+id/radioButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="RadioButton"
-            app:layout_column="0"
-            app:layout_row="1" />
-
-        <ImageView
-            android:id="@+id/imageView3"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:layout_column="0"
-            app:layout_row="2"
-            tools:srcCompat="@tools:sample/avatars" />
-
-        <ImageView
-            android:id="@+id/imageView4"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:layout_column="1"
-            app:layout_row="0"
-            tools:srcCompat="@tools:sample/avatars" />
-
-        <RadioButton
-            android:id="@+id/radioButton2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="RadioButton"
-            app:layout_column="1"
-            app:layout_row="1" />
-
-        <RadioButton
-            android:id="@+id/radioButton3"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="RadioButton"
-            app:layout_column="0"
-            app:layout_row="3" />
-
-        <ImageView
-            android:id="@+id/imageView5"
-            android:layout_width="262dp"
-            android:layout_height="182dp"
-            app:layout_column="1"
-            app:layout_row="2"
-            app:srcCompat="@drawable/aceitunas_negras" />
-
-        <RadioButton
-            android:id="@+id/radioButton4"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="RadioButton"
-            app:layout_column="1"
-            app:layout_row="3" />
-
-        <RadioGroup
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:layout_column="0"
-            app:layout_row="1" />
     </androidx.gridlayout.widget.GridLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

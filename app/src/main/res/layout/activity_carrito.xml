@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/carito"
-    tools:context=".Pedido.Carrito">
+    tools:context=".ActivitysPedido.Carrito">
 
     <Button
         android:id="@+id/button3"

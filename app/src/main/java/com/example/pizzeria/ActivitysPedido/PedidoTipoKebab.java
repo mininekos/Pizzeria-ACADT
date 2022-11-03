@@ -1,4 +1,4 @@
-package com.example.pizzeria.Pedido;
+package com.example.pizzeria.ActivitysPedido;
 
 import androidx.appcompat.app.AppCompatActivity;
 
