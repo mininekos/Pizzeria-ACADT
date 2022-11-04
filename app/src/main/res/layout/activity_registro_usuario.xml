@@ -11,7 +11,7 @@
         android:layout_width="259dp"
         android:layout_height="48dp"
         android:layout_marginStart="102dp"
-        android:layout_marginTop="152dp"
+        android:layout_marginTop="48dp"
         android:layout_marginEnd="99dp"
         android:autofillHints="username"
         android:ems="10"
@@ -19,6 +19,22 @@
         android:inputType="textPersonName"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.836"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtEmail" />
+
+    <EditText
+        android:id="@+id/txtEmail"
+        android:layout_width="259dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="102dp"
+        android:layout_marginTop="80dp"
+        android:layout_marginEnd="99dp"
+        android:autofillHints="username"
+        android:ems="10"
+        android:hint="@string/Email"
+        android:inputType="textPersonName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.857"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -43,9 +59,19 @@
         android:id="@+id/button2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="136dp"
-        android:layout_marginTop="54dp"
+        android:layout_marginStart="58dp"
+        android:layout_marginTop="52dp"
         android:text="@string/Registrarse"
+        app:layout_constraintStart_toEndOf="@+id/btnVolverRegistro"
+        app:layout_constraintTop_toBottomOf="@+id/txtContrasennaRegistro" />
+
+    <Button
+        android:id="@+id/btnVolverRegistro"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="60dp"
+        android:layout_marginTop="52dp"
+        android:text="@string/Volver"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txtContrasennaRegistro" />
 </androidx.constraintlayout.widget.ConstraintLayout>

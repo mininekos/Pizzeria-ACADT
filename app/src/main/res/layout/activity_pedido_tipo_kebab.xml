@@ -7,9 +7,13 @@
     tools:context=".ActivitysPedido.PedidoTipoKebab">
 
     <com.example.pizzeria.RadioGroupPresonalizado.RadioGridGroup
-        android:layout_width="410dp"
-        android:layout_height="627dp"
-        tools:ignore="MissingConstraints">
+        android:id="@+id/radioGridGroup"
+        android:layout_width="414dp"
+        android:layout_height="516dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="0dp">
 
         <TableRow
             android:layout_width="match_parent"
@@ -18,7 +22,7 @@
             <ImageView
                 android:id="@+id/imageView3"
                 android:layout_width="197dp"
-                android:layout_height="157dp"
+                android:layout_height="200dp"
                 android:src="@drawable/aceitunas_negras"
                 app:srcCompat="@drawable/durum" />
 
@@ -50,7 +54,7 @@
             <ImageView
                 android:id="@+id/imageView5"
                 android:layout_width="203dp"
-                android:layout_height="147dp"
+                android:layout_height="200dp"
                 android:src="@drawable/aceitunas_negras"
                 app:srcCompat="@drawable/plato_kebab" />
 
@@ -102,67 +106,104 @@
         app:layout_constraintStart_toStartOf="parent" />
 
     <androidx.gridlayout.widget.GridLayout
-        android:layout_width="405dp"
-        android:layout_height="157dp"
-        android:layout_marginEnd="5dp"
-        android:layout_marginBottom="1dp"
+        android:layout_width="414dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="82dp"
         app:layout_constraintBottom_toTopOf="@+id/btnSiguienteTipoKebab"
-        app:layout_constraintEnd_toEndOf="parent">
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
 
-        <RadioGroup
-            android:layout_width="wrap_content"
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
+            android:orientation="vertical"
             app:layout_column="0"
-            app:layout_row="0" >
+            app:layout_row="1">
 
-            <RadioButton
-                android:id="@+id/radioButton9"
+            <TextView
+                android:id="@+id/textView5"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="RadioButton" />
+                android:layout_marginLeft="20dp"
+                android:text="TextView" />
 
-            <RadioButton
-                android:id="@+id/radioButton10"
-                android:layout_width="wrap_content"
+            <RadioGroup
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="RadioButton" />
+                android:orientation="horizontal">
 
-            <RadioButton
-                android:id="@+id/radioButton11"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="RadioButton" />
-        </RadioGroup>
+                <RadioButton
+                    android:id="@+id/radioButton6"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="RadioButton" />
 
-        <RadioGroup
-            android:layout_width="wrap_content"
+                <RadioButton
+                    android:id="@+id/radioButton5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="RadioButton" />
+
+                <RadioButton
+                    android:id="@+id/radioButton4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="RadioButton" />
+            </RadioGroup>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
+            android:orientation="vertical"
             app:layout_column="0"
-            app:layout_row="1" >
+            app:layout_row="0">
 
-            <RadioButton
-                android:id="@+id/radioButton12"
+            <TextView
+                android:id="@+id/textView4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:text="@string/Salsas" />
+
+            <RadioGroup
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="RadioButton" />
+                android:orientation="horizontal">
 
-            <RadioButton
-                android:id="@+id/radioButton13"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="RadioButton" />
+                <RadioButton
+                    android:id="@+id/radioButton9"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/Salsa_Yogurt" />
 
-            <RadioButton
-                android:id="@+id/radioButton14"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="RadioButton" />
-        </RadioGroup>
+                <RadioButton
+                    android:id="@+id/radioButton10"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/Salsa_Picante" />
+
+                <RadioButton
+                    android:id="@+id/radioButton11"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/Ambas" />
+
+                <RadioButton
+                    android:id="@+id/radioButton7"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/Ninguna" />
+            </RadioGroup>
+        </LinearLayout>
+
     </androidx.gridlayout.widget.GridLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

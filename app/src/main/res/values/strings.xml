@@ -16,4 +16,13 @@
     <string name="Siguiente">Siguiente</string>
     <string name="Volver">Volver</string>
     <string name="Durum">Durum</string>
+    <string name="txtEscoger">"Escoge color: "</string>
+    <string name="Favorito">Activar Pedido Favorito</string>
+    <string name="Guardar">Guardar</string>
+    <string name="Email">Email</string>
+    <string name="Salsas">Salsas</string>
+    <string name="Salsa_Yogurt">Salsa Yogurt</string>
+    <string name="Salsa_Picante">Salsa Picante</string>
+    <string name="Ambas">Ambas</string>
+    <string name="Ninguna">Ninguna</string>
 </resources>

@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 
 import com.example.pizzeria.ActivitysPedido.PedidoTipoKebab;
+import com.example.pizzeria.Configuracion.Configuracion;
 import com.example.pizzeria.databinding.ActivityInicioSesionBinding;
 
 public class InicioSesion extends AppCompatActivity implements View.OnClickListener {
@@ -25,7 +26,7 @@ public class InicioSesion extends AppCompatActivity implements View.OnClickListe
     @Override
     public void onClick(View view) {
         if(R.id.btnIniciarSesion==view.getId()){
-            Intent i = new Intent(InicioSesion.this, PedidoTipoKebab.class);
+            Intent i = new Intent(InicioSesion.this, Configuracion.class);
             startActivity(i);
         }
     }
