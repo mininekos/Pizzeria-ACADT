@@ -25,4 +25,12 @@
     <string name="Salsa_Picante">Salsa Picante</string>
     <string name="Ambas">Ambas</string>
     <string name="Ninguna">Ninguna</string>
+    <string name="Carne">Carne</string>
+    <string name="Donner">Donner</string>
+    <string name="Plato_Kebab">Plato Kebab</string>
+    <string name="Lahmacun">Lahmacun</string>
+    <string name="Pollo">Pollo</string>
+    <string name="Ternera">Ternera</string>
+    <string name="Mixto">Mixto</string>
+    <string name="Falafel">Falafel</string>
 </resources>

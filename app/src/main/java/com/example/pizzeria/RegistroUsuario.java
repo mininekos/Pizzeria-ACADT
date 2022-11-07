@@ -8,7 +8,7 @@ import android.view.View;
 
 import com.example.pizzeria.databinding.ActivityRegistroUsuarioBinding;
 
-public class RegistroUsuario extends AppCompatActivity {
+public class RegistroUsuario extends AppCompatActivity implements View.OnClickListener {
 
     private ActivityRegistroUsuarioBinding binding;
     @Override
@@ -16,8 +16,19 @@ public class RegistroUsuario extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         binding=ActivityRegistroUsuarioBinding.inflate(getLayoutInflater());
         View view = binding.getRoot();
-        setContentView(R.layout.activity_registro_usuario);
+        binding.btnVolverRegistro.setOnClickListener(this);
+        binding.btnRegistrar.setOnClickListener(this);
+        setContentView(view);
 
     }
 
+    @Override
+    public void onClick(View view) {
+        if(view.getId()==R.id.btnVolverRegistro){
+            finish();
+        }
+        if(view.getId()==R.id.btnRegistrar){
+            finish();
+        }
+    }
 }

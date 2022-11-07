@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:contentDescription="@string/Plato_Kebab"
     tools:context=".ActivitysPedido.PedidoTipoKebab">
 
     <com.example.pizzeria.RadioGroupPresonalizado.RadioGridGroup
@@ -23,30 +24,32 @@
                 android:id="@+id/imageView3"
                 android:layout_width="197dp"
                 android:layout_height="200dp"
-                android:src="@drawable/aceitunas_negras"
+                android:contentDescription="@string/Durum"
+                android:src="@drawable/durum"
                 app:srcCompat="@drawable/durum" />
 
             <ImageView
                 android:id="@+id/imageView2"
                 android:layout_width="213dp"
                 android:layout_height="match_parent"
-                android:src="@drawable/aceitunas_negras"
+                android:contentDescription="@string/Donner"
+                android:src="@drawable/doner_kebab"
                 app:srcCompat="@drawable/doner_kebab" />
         </TableRow>
 
         <TableRow>
 
             <RadioButton
-                android:id="@+id/rad1"
+                android:id="@+id/radioDurum"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/Durum" />
 
             <RadioButton
-                android:id="@+id/rad2"
+                android:id="@+id/radioDonner"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Donner" />
+                android:text="@string/Donner" />
         </TableRow>
 
         <TableRow>
@@ -55,30 +58,32 @@
                 android:id="@+id/imageView5"
                 android:layout_width="203dp"
                 android:layout_height="200dp"
-                android:src="@drawable/aceitunas_negras"
+                android:contentDescription="@string/Plato_Kebab"
+                android:src="@drawable/plato_kebab"
                 app:srcCompat="@drawable/plato_kebab" />
 
             <ImageView
                 android:id="@+id/imageView4"
                 android:layout_width="198dp"
                 android:layout_height="match_parent"
-                android:src="@drawable/aceitunas_negras"
+                android:contentDescription="@string/Lahmacun"
+                android:src="@drawable/lamacum"
                 app:srcCompat="@drawable/lamacum" />
         </TableRow>
 
         <TableRow>
 
             <RadioButton
-                android:id="@+id/rad5"
+                android:id="@+id/radioPlatoKebab"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Plato Kebab" />
+                android:text="@string/Plato_Kebab" />
 
             <RadioButton
-                android:id="@+id/rad6"
+                android:id="@+id/radioLahmacun"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Lahmacun" />
+                android:text="@string/Lahmacun" />
         </TableRow>
 
     </com.example.pizzeria.RadioGroupPresonalizado.RadioGridGroup>
@@ -124,8 +129,8 @@
                 android:id="@+id/textView5"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="20dp"
-                android:text="TextView" />
+                android:layout_marginStart="20dp"
+                android:text="@string/Carne" />
 
             <RadioGroup
                 android:layout_width="match_parent"
@@ -133,25 +138,32 @@
                 android:orientation="horizontal">
 
                 <RadioButton
-                    android:id="@+id/radioButton6"
+                    android:id="@+id/radioPollo"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="RadioButton" />
+                    android:text="@string/Pollo" />
 
                 <RadioButton
-                    android:id="@+id/radioButton5"
+                    android:id="@+id/radioTernera"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="RadioButton" />
+                    android:text="@string/Ternera" />
 
                 <RadioButton
-                    android:id="@+id/radioButton4"
+                    android:id="@+id/radioMixto"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="RadioButton" />
+                    android:text="@string/Mixto" />
+
+                <RadioButton
+                    android:id="@+id/radioFalafel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/Falafel" />
             </RadioGroup>
         </LinearLayout>
 
@@ -166,7 +178,7 @@
                 android:id="@+id/textView4"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="20dp"
+                android:layout_marginStart="20dp"
                 android:text="@string/Salsas" />
 
             <RadioGroup
@@ -175,28 +187,28 @@
                 android:orientation="horizontal">
 
                 <RadioButton
-                    android:id="@+id/radioButton9"
+                    android:id="@+id/radioYogurt"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:text="@string/Salsa_Yogurt" />
 
                 <RadioButton
-                    android:id="@+id/radioButton10"
+                    android:id="@+id/radioPicante"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:text="@string/Salsa_Picante" />
 
                 <RadioButton
-                    android:id="@+id/radioButton11"
+                    android:id="@+id/radioAmabasSalsas"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:text="@string/Ambas" />
 
                 <RadioButton
-                    android:id="@+id/radioButton7"
+                    android:id="@+id/radioNingunaSalsa"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
