@@ -18,9 +18,11 @@ public class InicioSesion extends AppCompatActivity implements View.OnClickListe
         super.onCreate(savedInstanceState);
         binding = ActivityInicioSesionBinding.inflate(getLayoutInflater());
         View view = binding.getRoot();
+        getSupportActionBar().hide();
+        setContentView(view);
         binding.btnIniciarSesion.setOnClickListener(this);
         binding.txtRegistrar.setOnClickListener(this);
-        setContentView(view);
+
     }
 
 

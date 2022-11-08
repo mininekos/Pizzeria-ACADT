@@ -27,7 +27,8 @@ public class Configuracion extends AppCompatActivity implements View.OnClickList
         super.onCreate(savedInstanceState);
         binding = ActivityConfiguracionBinding.inflate(getLayoutInflater());
         View view = binding.getRoot();
-
+        setContentView(view);
+        getSupportActionBar().hide();
         colores=(Spinner) findViewById(R.id.spinnerColores);
         opciones= new String[]{"Blanco","Amarillo","Azul","Naraja","Rosa"};
         adapter= new ArrayAdapter<String>(this,android.R.layout.simple_spinner_item,opciones);
@@ -35,7 +36,7 @@ public class Configuracion extends AppCompatActivity implements View.OnClickList
         colores.setAdapter(adapter);
         binding.btnVolverConfiguracion.setOnClickListener(this);
         binding.btnGuardarConfiguracion.setOnClickListener(this);
-        setContentView(view);
+
     }
 
     @Override

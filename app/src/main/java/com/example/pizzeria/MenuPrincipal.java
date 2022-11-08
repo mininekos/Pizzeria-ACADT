@@ -19,10 +19,12 @@ public class MenuPrincipal extends AppCompatActivity implements View.OnClickList
         super.onCreate(savedInstanceState);
         binding=ActivityMenuPrincipalBinding.inflate(getLayoutInflater());
         View view = binding.getRoot();
+        getSupportActionBar().hide();
+        setContentView(view);
         binding.btnConfiguracion.setOnClickListener(this);
         binding.btnPedido.setOnClickListener(this);
         binding.btnWeb.setOnClickListener(this);
-        setContentView(view);
+
     }
 
     @Override
@@ -37,7 +39,7 @@ public class MenuPrincipal extends AppCompatActivity implements View.OnClickList
         }
         if(view.getId()==R.id.btnWeb){
             Intent i = new Intent(Intent.ACTION_VIEW);
-            i.setData(Uri.parse("https://www.dominospizza.es/"));
+            i.setData(Uri.parse("https://saborgourmet.com/kebab-tipico-de-turquia/"));
             startActivity(i);
         }
     }

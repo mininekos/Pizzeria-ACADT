@@ -4,11 +4,12 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import com.example.pizzeria.R;
 
-public class Pedido extends AppCompatActivity {
+public class PedidoIngredientes extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_pedido);
+        getSupportActionBar().hide();
+        setContentView(R.layout.activity_pedido_ingredientes);
     }
 }

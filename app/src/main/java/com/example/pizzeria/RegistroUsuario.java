@@ -16,9 +16,11 @@ public class RegistroUsuario extends AppCompatActivity implements View.OnClickLi
         super.onCreate(savedInstanceState);
         binding=ActivityRegistroUsuarioBinding.inflate(getLayoutInflater());
         View view = binding.getRoot();
+        getSupportActionBar().hide();
+        setContentView(view);
         binding.btnVolverRegistro.setOnClickListener(this);
         binding.btnRegistrar.setOnClickListener(this);
-        setContentView(view);
+
 
     }
 
