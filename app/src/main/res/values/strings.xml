@@ -33,4 +33,16 @@
     <string name="Ternera">Ternera</string>
     <string name="Mixto">Mixto</string>
     <string name="Falafel">Falafel</string>
+    <string name="Verduras">Verduras</string>
+    <string name="Extras">Extras</string>
+    <string name="Lechuga">Lechuga</string>
+    <string name="Tomate">Tomate</string>
+    <string name="Cebolla">Cebolla</string>
+    <string name="Col">Col</string>
+    <string name="Maiz">Maiz</string>
+    <string name="Aceitunas">Aceitunas</string>
+    <string name="Mozzarella">Mozzarella</string>
+    <string name="Feta">Queso feta</string>
+    <string name="Patatas">Patatas</string>
+    <string name="Extra_Carne">Extra de carne</string>
 </resources>
