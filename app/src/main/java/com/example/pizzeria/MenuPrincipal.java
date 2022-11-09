@@ -7,6 +7,7 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 
+import com.example.pizzeria.ActivitysPedido.MenuPedido;
 import com.example.pizzeria.ActivitysPedido.PedidoTipoKebab;
 import com.example.pizzeria.Configuracion.Configuracion;
 import com.example.pizzeria.databinding.ActivityMenuPrincipalBinding;
@@ -34,7 +35,7 @@ public class MenuPrincipal extends AppCompatActivity implements View.OnClickList
             startActivity(i);
         }
         if(view.getId()==R.id.btnPedido){
-            Intent i = new Intent(MenuPrincipal.this, PedidoTipoKebab.class);
+            Intent i = new Intent(MenuPrincipal.this, MenuPedido.class);
             startActivity(i);
         }
         if(view.getId()==R.id.btnWeb){

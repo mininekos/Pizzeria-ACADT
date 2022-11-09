@@ -45,4 +45,7 @@
     <string name="Feta">Queso feta</string>
     <string name="Patatas">Patatas</string>
     <string name="Extra_Carne">Extra de carne</string>
+    <string name="Personalizado">Personalizado</string>
+    <string name="Favorita">Favorito</string>
+    <string name="Casa">De la casa</string>
 </resources>
