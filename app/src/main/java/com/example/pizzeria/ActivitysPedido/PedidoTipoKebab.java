@@ -1,7 +1,9 @@
 package com.example.pizzeria.ActivitysPedido;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -28,20 +30,38 @@ public class PedidoTipoKebab extends AppCompatActivity implements View.OnClickLi
         binding.btnVolverTipoKebab.setOnClickListener(this);
     }
 
+    private AlertDialog.Builder crearDialogo(String cadena) {
+        AlertDialog.Builder dialogo1 = new AlertDialog.Builder(this);
+        dialogo1.setTitle("Rellene los campos");
+        dialogo1.setMessage(cadena);
+        dialogo1.setCancelable(true);
+
+        dialogo1.setNegativeButton("Ok", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+
+            }
+        });
+        return dialogo1;
+    }
+
     @Override
     public void onClick(View view) {
         if(R.id.btnSiguienteTipoKebab==view.getId()){
             if(binding.radioGridGroup.getCheckedRadioButtonId()==-1){
-
+                AlertDialog.Builder dialogo = crearDialogo("Falta escoger el tipo de kebab");
+                dialogo.show();
             }
             else if(binding.rgSalsa.getCheckedRadioButtonId()==-1){
-
+                AlertDialog.Builder dialogo = crearDialogo("Falta escoger salsa");
+                dialogo.show();
             }
             else if(binding.rgCarne.getCheckedRadioButtonId()==-1){
-
+                AlertDialog.Builder dialogo = crearDialogo("Falta escoger carne");
+                dialogo.show();
             }
             else{
-                Intent i = new Intent(PedidoTipoKebab.this, MenuPrincipal.class);
+                Intent i = new Intent(PedidoTipoKebab.this, PedidoIngredientes.class);
                 startActivity(i);
             }
 
@@ -50,5 +70,7 @@ public class PedidoTipoKebab extends AppCompatActivity implements View.OnClickLi
         if(R.id.btnVolverTipoKebab==view.getId()){
             finish();
         }
+
+
     }
 }

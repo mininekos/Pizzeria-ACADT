@@ -13,14 +13,14 @@
         android:theme="@style/Theme.Pizzeria"
         tools:targetApi="31">
         <activity
-            android:name=".PedidoPredeterminado"
+            android:name=".ActivitysPedido.PedidoPredeterminado"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:name=".MenuPedido"
+            android:name=".ActivitysPedido.MenuPedido"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"

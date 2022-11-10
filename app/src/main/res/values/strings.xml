@@ -48,4 +48,5 @@
     <string name="Personalizado">Personalizado</string>
     <string name="Favorita">Favorito</string>
     <string name="Casa">De la casa</string>
+    <string name="Carrito">Carrito</string>
 </resources>

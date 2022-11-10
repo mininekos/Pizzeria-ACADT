@@ -1,11 +1,14 @@
 package com.example.pizzeria;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Toast;
 
 import com.example.pizzeria.ActivitysPedido.MenuPedido;
 import com.example.pizzeria.ActivitysPedido.PedidoTipoKebab;
@@ -43,5 +46,33 @@ public class MenuPrincipal extends AppCompatActivity implements View.OnClickList
             i.setData(Uri.parse("https://saborgourmet.com/kebab-tipico-de-turquia/"));
             startActivity(i);
         }
+    }
+
+    private AlertDialog.Builder crearDialogo() {
+        AlertDialog.Builder dialogo1 = new AlertDialog.Builder(this);
+        dialogo1.setTitle("Salir");
+        dialogo1.setMessage("¿Quieres salir?");
+        dialogo1.setCancelable(true);
+
+        dialogo1.setPositiveButton("Si", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+                finish();
+            }
+        });
+
+        dialogo1.setNegativeButton("No", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+
+            }
+        });
+        return dialogo1;
+    }
+
+    @Override
+    public void onBackPressed() {
+        AlertDialog.Builder dialogo = crearDialogo();
+        dialogo.show();
     }
 }
