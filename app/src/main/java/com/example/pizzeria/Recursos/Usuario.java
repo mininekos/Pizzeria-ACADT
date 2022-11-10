@@ -42,6 +42,6 @@ public class Usuario {
 
     @Override
     public String toString() {
-        return "Usuario" + nombre + '\'';
+        return "Usuario\n" + nombre;
     }
 }
