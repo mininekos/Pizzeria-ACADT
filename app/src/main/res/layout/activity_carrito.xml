@@ -11,47 +11,61 @@
         android:id="@+id/btnFinalizarCarrito"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="44dp"
+        android:layout_marginEnd="4dp"
         android:layout_marginBottom="44dp"
         android:text="@string/Finalizar"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 
-    <ScrollView
-        android:id="@+id/scrollView2"
-        android:layout_width="405dp"
-        android:layout_height="372dp"
-        android:layout_marginStart="3dp"
-        android:layout_marginTop="116dp"
-        android:layout_marginEnd="3dp"
-        android:layout_marginBottom="171dp"
-        app:layout_constraintBottom_toTopOf="@+id/btnFinalizarCarrito"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0">
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
-
-            <TextView
-                android:id="@+id/txtPedido"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent" />
-        </LinearLayout>
-    </ScrollView>
-
     <Button
         android:id="@+id/btnVolverCarrito"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="120dp"
+        android:layout_marginEnd="32dp"
         android:layout_marginBottom="44dp"
         android:text="@string/Volver"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/btnFavorito" />
+
+    <TextView
+        android:id="@+id/txtPedido"
+        android:layout_width="400dp"
+        android:layout_height="406dp"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="50dp"
+        android:textSize="20dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/btnFavorito"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="48dp"
+        android:layout_marginBottom="44dp"
+        android:text="@string/Favorita"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/btnFinalizarCarrito" />
+
+    <TextView
+        android:id="@+id/txtPrecioCarrito"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="17dp"
+        android:layout_marginBottom="57dp"
+        android:text="@string/Precio"
+        android:textSize="24dp"
+        app:layout_constraintBottom_toTopOf="@+id/btnVolverCarrito"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/txtPrecio"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="57dp"
+        android:text="@string/Precio"
+        android:textSize="24dp"
+        app:layout_constraintBottom_toTopOf="@+id/btnVolverCarrito"
+        app:layout_constraintStart_toEndOf="@+id/txtPrecioCarrito" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

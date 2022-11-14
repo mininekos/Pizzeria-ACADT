@@ -18,15 +18,25 @@ public class DAOUsuario {
         return dao;
     }
 
-    public static ArrayList<Usuario> getLista(){
+    public ArrayList<Usuario> getLista(){
         lista.add(new Usuario("admin","admin","coreo1"));
         lista.add(new Usuario("Manu","1234","coreo2"));
         return lista;
     }
 
-    public static Boolean agregarUsuario(Usuario usuario){
-        lista.add(usuario);
-        return true;
+    public Usuario getUsuario(Usuario usuario){
+        if(DAOUsuario.getInstance().getLista().contains(usuario)){
+            return usuario;
+        }
+        else return null;
+    }
+    public Boolean agregarUsuario(Usuario usuario){
+        if(DAOUsuario.getInstance().getUsuario(usuario)==null){
+            lista.add(usuario);
+            return true;
+        }
+
+        return false;
     }
 
 }

@@ -6,28 +6,36 @@
     android:layout_height="match_parent"
     tools:context=".RegistroUsuario">
 
-    <EditText
-        android:id="@+id/txtUsuarioRegistro"
-        android:layout_width="259dp"
-        android:layout_height="48dp"
-        android:layout_marginStart="102dp"
-        android:layout_marginTop="48dp"
-        android:layout_marginEnd="99dp"
-        android:autofillHints="username"
-        android:ems="10"
-        android:hint="@string/Usuario"
-        android:inputType="textPersonName"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.836"
+    <ImageView
+        android:id="@+id/imageView7"
+        android:layout_width="203dp"
+        android:layout_height="144dp"
+        android:layout_marginStart="92dp"
+        android:layout_marginTop="24dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtEmail" />
+        app:layout_constraintTop_toBottomOf="@+id/textView8"
+        app:srcCompat="@drawable/logo" />
+
+    <TextView
+        android:id="@+id/textView8"
+        android:layout_width="210dp"
+        android:layout_height="57dp"
+        android:layout_marginStart="59dp"
+        android:layout_marginTop="44dp"
+        android:layout_marginEnd="103dp"
+        android:text="@string/Registro"
+        android:textAlignment="center"
+        android:textSize="48sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
         android:id="@+id/txtEmail"
         android:layout_width="259dp"
         android:layout_height="48dp"
         android:layout_marginStart="102dp"
-        android:layout_marginTop="80dp"
+        android:layout_marginTop="284dp"
         android:layout_marginEnd="99dp"
         android:autofillHints="username"
         android:ems="10"
@@ -38,29 +46,12 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <EditText
-        android:id="@+id/txtContrasennaRegistro"
-        android:layout_width="259dp"
-        android:layout_height="48dp"
-        android:layout_marginStart="102dp"
-        android:layout_marginTop="61dp"
-        android:layout_marginEnd="99dp"
-        android:autofillHints="username"
-        android:ems="10"
-        android:hint="@string/Contrasenna"
-        android:inputType="textPersonName"
-        android:textColorHint="#757575"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.836"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtUsuarioRegistro" />
-
     <Button
         android:id="@+id/btnRegistrar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="58dp"
-        android:layout_marginTop="52dp"
+        android:layout_marginStart="60dp"
+        android:layout_marginTop="40dp"
         android:text="@string/Registrarse"
         app:layout_constraintStart_toEndOf="@+id/btnVolverRegistro"
         app:layout_constraintTop_toBottomOf="@+id/txtContrasennaRegistro" />
@@ -69,9 +60,43 @@
         android:id="@+id/btnVolverRegistro"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="60dp"
-        android:layout_marginTop="52dp"
+        android:layout_marginStart="56dp"
+        android:layout_marginTop="40dp"
         android:text="@string/Volver"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txtContrasennaRegistro" />
+
+    <EditText
+        android:id="@+id/txtUsuarioRegistro"
+        android:layout_width="259dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="102dp"
+        android:layout_marginTop="56dp"
+        android:layout_marginEnd="99dp"
+        android:autofillHints="username"
+        android:ems="10"
+        android:hint="@string/Usuario"
+        android:inputType="textPersonName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.857"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtEmail" />
+
+    <EditText
+        android:id="@+id/txtContrasennaRegistro"
+        android:layout_width="259dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="102dp"
+        android:layout_marginTop="52dp"
+        android:layout_marginEnd="99dp"
+        android:autofillHints="username"
+        android:ems="10"
+        android:hint="@string/Contrasenna"
+        android:inputType="textPersonName|textPassword"
+        android:textColorHint="#757575"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.857"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtUsuarioRegistro" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

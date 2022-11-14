@@ -2,7 +2,7 @@ package com.example.pizzeria.Enums;
 
 public enum TipoKebab {
 
-    lAHMACUM(4,"Lahmacum"),DURUM(3.5,"Durum"),DONNER(3,"Donner"),PLATO_KEBAB(6,"Plato Kebab");
+    LAHMACUM(4,"Lahmacum"),DURUM(3.5,"Durum"),DONNER(3,"Donner"),PLATO_KEBAB(6,"Plato Kebab");
 
     private double precioKebab;
     private String kebab;
@@ -18,5 +18,10 @@ public enum TipoKebab {
 
     public String getKebab() {
         return kebab;
+    }
+
+    @Override
+    public String toString() {
+        return kebab ;
     }
 }

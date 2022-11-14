@@ -49,4 +49,9 @@
     <string name="Favorita">Favorito</string>
     <string name="Casa">De la casa</string>
     <string name="Carrito">Carrito</string>
+    <string name="Llamar">Llamar</string>
+    <string name="Registro">Registro</string>
+    <string name="Usuario_">USUARIO :</string>
+    <string name="Huevo">Huevo</string>
+    <string name="Precio">Precio :</string>
 </resources>

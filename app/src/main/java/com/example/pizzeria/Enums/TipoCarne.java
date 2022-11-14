@@ -2,7 +2,7 @@ package com.example.pizzeria.Enums;
 
 public enum TipoCarne {
 
-    POLLO("Pollo"),TERNERA("Ternera"),Mixto("Mixto"),Falafel("Falafel");
+    POLLO("Pollo"),TERNERA("Ternera"),MIXTO("Mixto"),FALAFEL("Falafel");
 
     private String tipoCarne;
 
@@ -12,5 +12,11 @@ public enum TipoCarne {
 
     public String getTipoCarne() {
         return tipoCarne;
+    }
+
+    @Override
+    public String toString() {
+        return tipoCarne;
+
     }
 }

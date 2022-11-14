@@ -22,4 +22,10 @@ public enum TipoIngredientes {
     public String getIngrediente() {
         return ingrediente;
     }
+
+    @Override
+    public String toString() {
+        return ingrediente+"\n";
+
+    }
 }

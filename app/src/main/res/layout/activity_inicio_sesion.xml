@@ -6,33 +6,6 @@
     android:layout_height="match_parent"
     tools:context=".InicioSesion">
     <!--va arriba pero peta android:background="@drawable/pizzeria_fondo"-->
-    <Button
-        android:id="@+id/btnIniciarSesion"
-        android:layout_width="176dp"
-        android:layout_height="48dp"
-        android:layout_marginStart="117dp"
-        android:layout_marginEnd="118dp"
-        android:layout_marginBottom="344dp"
-        android:text="@string/Sesion"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <EditText
-        android:id="@+id/txtContrasennaInicio"
-        android:layout_width="259dp"
-        android:layout_height="48dp"
-        android:layout_marginStart="102dp"
-        android:layout_marginEnd="99dp"
-        android:layout_marginBottom="19dp"
-        android:autofillHints="password"
-        android:ems="10"
-        android:hint="@string/Contrasenna"
-        android:inputType="textPassword"
-        android:textColorHint="#757575"
-        app:layout_constraintBottom_toTopOf="@+id/btnIniciarSesion"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
 
     <EditText
         android:id="@+id/txtUsuarioInicio"
@@ -40,22 +13,36 @@
         android:layout_height="48dp"
         android:layout_marginStart="102dp"
         android:layout_marginEnd="99dp"
-        android:layout_marginBottom="29dp"
+        android:layout_marginBottom="32dp"
+        android:autofillHints="username"
         android:ems="10"
         android:hint="@string/Usuario"
-        android:autofillHints="username"
         android:inputType="textPersonName"
         app:layout_constraintBottom_toTopOf="@+id/txtContrasennaInicio"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.489"
         app:layout_constraintStart_toStartOf="parent" />
 
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="154dp"
-        android:layout_height="20dp"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="60dp"
-        android:text="@string/no_registro"
+    <Button
+        android:id="@+id/btnIniciarSesion"
+        android:layout_width="176dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="117dp"
+        android:layout_marginEnd="118dp"
+        android:layout_marginBottom="248dp"
+        android:text="@string/Sesion"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <CheckBox
+        android:id="@+id/checkRecuerdame"
+        android:layout_width="120dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="28dp"
+        android:layout_marginTop="8dp"
+        android:text="@string/Recuerdame"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btnIniciarSesion" />
 
@@ -63,7 +50,7 @@
         android:id="@+id/txtRegistrar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="60dp"
+        android:layout_marginTop="68dp"
         android:layout_marginEnd="116dp"
         android:text="@string/registrate"
         android:textAllCaps="false"
@@ -71,13 +58,30 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btnIniciarSesion" />
 
-    <CheckBox
-        android:id="@+id/checkRecuerdame"
-        android:layout_width="120dp"
+    <EditText
+        android:id="@+id/txtContrasennaInicio"
+        android:layout_width="259dp"
         android:layout_height="48dp"
-        android:layout_marginStart="28dp"
-        android:layout_marginTop="1dp"
-        android:text="@string/Recuerdame"
+        android:layout_marginStart="102dp"
+        android:layout_marginEnd="99dp"
+        android:layout_marginBottom="16dp"
+        android:autofillHints="password"
+        android:ems="10"
+        android:hint="@string/Contrasenna"
+        android:inputType="textPassword"
+        android:textColorHint="#757575"
+        app:layout_constraintBottom_toTopOf="@+id/btnIniciarSesion"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.489"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="154dp"
+        android:layout_height="20dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="68dp"
+        android:text="@string/no_registro"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btnIniciarSesion" />
 
@@ -86,12 +90,23 @@
         android:layout_width="208dp"
         android:layout_height="57dp"
         android:layout_marginStart="100dp"
-        android:layout_marginTop="88dp"
+        android:layout_marginTop="44dp"
         android:layout_marginEnd="103dp"
         android:text="@string/Kebab"
         android:textAlignment="center"
         android:textSize="48sp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/imageView6"
+        android:layout_width="203dp"
+        android:layout_height="144dp"
+        android:layout_marginStart="104dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView2"
+        app:srcCompat="@drawable/logo" />
 </androidx.constraintlayout.widget.ConstraintLayout>

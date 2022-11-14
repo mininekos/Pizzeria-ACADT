@@ -1,5 +1,7 @@
 package com.example.pizzeria.Recursos;
 
+import java.util.Objects;
+
 public class Usuario {
 
     private String nombre;
@@ -10,6 +12,12 @@ public class Usuario {
         this.nombre = nombre;
         this.contrasenna = contrasenna;
         this.email = email;
+    }
+
+    public Usuario(String nombre, String contrasenna) {
+        this.nombre = nombre;
+        this.contrasenna = contrasenna;
+        this.email = "email";
     }
 
     public Usuario() {
@@ -43,5 +51,18 @@ public class Usuario {
     @Override
     public String toString() {
         return "Usuario\n" + nombre;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Usuario usuario = (Usuario) o;
+        return getNombre().equals(usuario.getNombre());
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(nombre);
     }
 }

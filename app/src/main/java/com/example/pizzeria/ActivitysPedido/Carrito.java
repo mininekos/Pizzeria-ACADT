@@ -10,11 +10,14 @@ import android.view.View;
 
 import com.example.pizzeria.MenuPrincipal;
 import com.example.pizzeria.R;
+import com.example.pizzeria.Recursos.Kebab;
+import com.example.pizzeria.Servicio.Servicio;
 import com.example.pizzeria.databinding.ActivityCarritoBinding;
 
 public class Carrito extends AppCompatActivity implements View.OnClickListener {
 
     private ActivityCarritoBinding binding;
+    private Kebab kebab;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -24,6 +27,10 @@ public class Carrito extends AppCompatActivity implements View.OnClickListener {
         setContentView(view);
         binding.btnFinalizarCarrito.setOnClickListener(this);
         binding.btnVolverCarrito.setOnClickListener(this);
+        binding.btnFavorito.setOnClickListener(this);
+        kebab=(Kebab) getIntent().getSerializableExtra("Kebab");
+        binding.txtPedido.setText(kebab.toString());
+        binding.txtPrecio.setText(kebab.obtenerPrecio().toString());
     }
 
     @Override
@@ -33,6 +40,14 @@ public class Carrito extends AppCompatActivity implements View.OnClickListener {
             intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
             startActivity(intent);
         }
+        if(view.getId()==R.id.btnFavorito){
+            Servicio.getServicio().limpiarFavorito();
+            Servicio.getServicio().ponerFavirito();
+            Intent intent = new Intent(getApplicationContext(), MenuPrincipal.class);
+            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+            startActivity(intent);
+        }
+
         if(view.getId()==R.id.btnVolverCarrito){
             finish();
         }
