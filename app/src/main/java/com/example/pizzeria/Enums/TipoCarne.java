@@ -14,9 +14,4 @@ public enum TipoCarne {
         return tipoCarne;
     }
 
-    @Override
-    public String toString() {
-        return tipoCarne;
-
-    }
 }

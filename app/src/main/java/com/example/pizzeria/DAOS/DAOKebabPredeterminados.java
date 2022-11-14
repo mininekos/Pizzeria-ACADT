@@ -17,51 +17,52 @@ public class DAOKebabPredeterminados {
 
         if (dao==null)
             dao=new DAOKebabPredeterminados();
-        if(lista==null)
+        if (lista==null)
             lista=new ArrayList<Kebab>();
         return dao;
     }
 
     public ArrayList<Kebab> getLista(){
 
-        ArrayList<TipoIngredientes> ingredientesFeta=new ArrayList<TipoIngredientes>();
-        ingredientesFeta.add(TipoIngredientes.LECHUGA);
-        ingredientesFeta.add(TipoIngredientes.TOMATE);
-        ingredientesFeta.add(TipoIngredientes.MAIZ);
-        ingredientesFeta.add(TipoIngredientes.CEBOLLA);
-        ingredientesFeta.add(TipoIngredientes.COL);
-        ingredientesFeta.add(TipoIngredientes.QUESO_FETA);
+        if(lista.size()==0) {
+            ArrayList<TipoIngredientes> ingredientesFeta = new ArrayList<TipoIngredientes>();
+            ingredientesFeta.add(TipoIngredientes.LECHUGA);
+            ingredientesFeta.add(TipoIngredientes.TOMATE);
+            ingredientesFeta.add(TipoIngredientes.MAIZ);
+            ingredientesFeta.add(TipoIngredientes.CEBOLLA);
+            ingredientesFeta.add(TipoIngredientes.COL);
+            ingredientesFeta.add(TipoIngredientes.QUESO_FETA);
 
-        ArrayList<TipoIngredientes> ingredientesCompletoVerduras=new ArrayList<TipoIngredientes>();
-        ingredientesFeta.add(TipoIngredientes.LECHUGA);
-        ingredientesFeta.add(TipoIngredientes.TOMATE);
-        ingredientesFeta.add(TipoIngredientes.MAIZ);
-        ingredientesFeta.add(TipoIngredientes.CEBOLLA);
-        ingredientesFeta.add(TipoIngredientes.COL);
-        ingredientesFeta.add(TipoIngredientes.ACEITUNAS);
-        ingredientesFeta.add(TipoIngredientes.QUESO_FETA);
+            ArrayList<TipoIngredientes> ingredientesCompletoVerduras = new ArrayList<TipoIngredientes>();
+            ingredientesCompletoVerduras.add(TipoIngredientes.LECHUGA);
+            ingredientesCompletoVerduras.add(TipoIngredientes.TOMATE);
+            ingredientesCompletoVerduras.add(TipoIngredientes.MAIZ);
+            ingredientesCompletoVerduras.add(TipoIngredientes.CEBOLLA);
+            ingredientesCompletoVerduras.add(TipoIngredientes.COL);
+            ingredientesCompletoVerduras.add(TipoIngredientes.ACEITUNAS);
+            ingredientesCompletoVerduras.add(TipoIngredientes.QUESO_FETA);
 
-        ArrayList<TipoIngredientes> ingredientesSoloCarnePatatas=new ArrayList<TipoIngredientes>();
-        ingredientesFeta.add(TipoIngredientes.EXTRA_CARNE);
-        ingredientesFeta.add(TipoIngredientes.PATATAS);
+            ArrayList<TipoIngredientes> ingredientesSoloCarnePatatas = new ArrayList<TipoIngredientes>();
+            ingredientesSoloCarnePatatas.add(TipoIngredientes.EXTRA_CARNE);
+            ingredientesSoloCarnePatatas.add(TipoIngredientes.PATATAS);
 
-        ArrayList<TipoIngredientes> ingredientesSuperCompleto=new ArrayList<TipoIngredientes>();
-        ingredientesFeta.add(TipoIngredientes.LECHUGA);
-        ingredientesFeta.add(TipoIngredientes.TOMATE);
-        ingredientesFeta.add(TipoIngredientes.MAIZ);
-        ingredientesFeta.add(TipoIngredientes.CEBOLLA);
-        ingredientesFeta.add(TipoIngredientes.COL);
-        ingredientesFeta.add(TipoIngredientes.ACEITUNAS);
-        ingredientesFeta.add(TipoIngredientes.QUESO_FETA);
-        ingredientesFeta.add(TipoIngredientes.EXTRA_CARNE);
-        ingredientesFeta.add(TipoIngredientes.HUEVO);
-        ingredientesFeta.add(TipoIngredientes.PATATAS);
+            ArrayList<TipoIngredientes> ingredientesSuperCompleto = new ArrayList<TipoIngredientes>();
+            ingredientesSuperCompleto.add(TipoIngredientes.LECHUGA);
+            ingredientesSuperCompleto.add(TipoIngredientes.TOMATE);
+            ingredientesSuperCompleto.add(TipoIngredientes.MAIZ);
+            ingredientesSuperCompleto.add(TipoIngredientes.CEBOLLA);
+            ingredientesSuperCompleto.add(TipoIngredientes.COL);
+            ingredientesSuperCompleto.add(TipoIngredientes.ACEITUNAS);
+            ingredientesSuperCompleto.add(TipoIngredientes.QUESO_FETA);
+            ingredientesSuperCompleto.add(TipoIngredientes.EXTRA_CARNE);
+            ingredientesSuperCompleto.add(TipoIngredientes.HUEVO);
+            ingredientesSuperCompleto.add(TipoIngredientes.PATATAS);
 
-        lista.add(new Kebab("Completo",ingredientesCompletoVerduras, TipoKebab.LAHMACUM, TipoCarne.MIXTO, TipoSalsa.AMBAS));
-        lista.add(new Kebab("SuperCompleto",ingredientesSuperCompleto, TipoKebab.LAHMACUM, TipoCarne.MIXTO, TipoSalsa.AMBAS));
-        lista.add(new Kebab("Carnivoro",ingredientesSoloCarnePatatas, TipoKebab.LAHMACUM, TipoCarne.MIXTO, TipoSalsa.AMBAS));
-        lista.add(new Kebab("Feta",ingredientesFeta, TipoKebab.LAHMACUM, TipoCarne.MIXTO, TipoSalsa.AMBAS));
-
+            lista.add(new Kebab("Completo", ingredientesCompletoVerduras, TipoKebab.LAHMACUM, TipoCarne.MIXTO, TipoSalsa.AMBAS));
+            lista.add(new Kebab("SuperCompleto", ingredientesSuperCompleto, TipoKebab.LAHMACUM, TipoCarne.MIXTO, TipoSalsa.AMBAS));
+            lista.add(new Kebab("Carnivoro", ingredientesSoloCarnePatatas, TipoKebab.LAHMACUM, TipoCarne.MIXTO, TipoSalsa.AMBAS));
+            lista.add(new Kebab("Feta", ingredientesFeta, TipoKebab.LAHMACUM, TipoCarne.MIXTO, TipoSalsa.AMBAS));
+        }
         return lista;
     }
 

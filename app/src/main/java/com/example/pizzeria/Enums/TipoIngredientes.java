@@ -23,9 +23,4 @@ public enum TipoIngredientes {
         return ingrediente;
     }
 
-    @Override
-    public String toString() {
-        return ingrediente+"\n";
-
-    }
 }

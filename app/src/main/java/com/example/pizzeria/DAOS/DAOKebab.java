@@ -19,7 +19,6 @@ public class DAOKebab {
     }
 
     public ArrayList<Kebab> getLista(){
-        
         return lista;
     }
 

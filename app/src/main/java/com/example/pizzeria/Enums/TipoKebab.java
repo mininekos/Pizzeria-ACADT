@@ -20,8 +20,5 @@ public enum TipoKebab {
         return kebab;
     }
 
-    @Override
-    public String toString() {
-        return kebab ;
-    }
+
 }

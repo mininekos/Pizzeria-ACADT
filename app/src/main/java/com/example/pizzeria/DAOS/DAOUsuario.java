@@ -19,8 +19,10 @@ public class DAOUsuario {
     }
 
     public ArrayList<Usuario> getLista(){
-        lista.add(new Usuario("admin","admin","coreo1"));
-        lista.add(new Usuario("Manu","1234","coreo2"));
+        if(lista.size()==0) {
+            lista.add(new Usuario("admin", "admin", "coreo1"));
+            lista.add(new Usuario("Manu", "1234", "coreo2"));
+        }
         return lista;
     }
 

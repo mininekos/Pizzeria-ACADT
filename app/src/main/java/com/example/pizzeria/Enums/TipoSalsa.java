@@ -13,9 +13,4 @@ public enum TipoSalsa {
         return salsa;
     }
 
-    @Override
-    public String toString() {
-        return salsa;
-
-    }
 }

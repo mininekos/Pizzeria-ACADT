@@ -103,6 +103,13 @@ public class Kebab implements Serializable {
 
     @Override
     public String toString() {
+        if(nombre!=""){
+            return  "Kebab: " + tipoKebab +
+                    "\n \tNombre: " + nombre +
+                    "\n \tCarne: " + carne +
+                    "\n \tSalsa: " + salsa +
+                    "\n \tIngredientes: " + ingredientes ;
+        }
         return  "Kebab: " + tipoKebab +
                 "\n \tCarne: " + carne +
                 "\n \tSalsa: " + salsa +
