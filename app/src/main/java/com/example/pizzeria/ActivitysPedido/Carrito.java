@@ -18,6 +18,7 @@ public class Carrito extends AppCompatActivity implements View.OnClickListener {
 
     private ActivityCarritoBinding binding;
     private Kebab kebab;
+    private Servicio servicio;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -31,6 +32,8 @@ public class Carrito extends AppCompatActivity implements View.OnClickListener {
         kebab=(Kebab) getIntent().getSerializableExtra("Kebab");
         binding.txtPedido.setText(kebab.toString());
         binding.txtPrecio.setText(kebab.obtenerPrecio().toString());
+        servicio=Servicio.getServicio();
+
     }
 
     @Override
@@ -39,10 +42,12 @@ public class Carrito extends AppCompatActivity implements View.OnClickListener {
             Intent intent = new Intent(getApplicationContext(), MenuPrincipal.class);
             intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
             startActivity(intent);
+            servicio.agregarKebab(kebab);
         }
         if(view.getId()==R.id.btnFavorito){
-            Servicio.getServicio().limpiarFavorito();
-            Servicio.getServicio().ponerFavirito();
+            servicio.agregarKebab(kebab);
+            servicio.limpiarFavorito();
+            servicio.ponerFavirito();
             Intent intent = new Intent(getApplicationContext(), MenuPrincipal.class);
             intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
             startActivity(intent);
