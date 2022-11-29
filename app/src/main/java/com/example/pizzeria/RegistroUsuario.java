@@ -53,7 +53,8 @@ public class RegistroUsuario extends AppCompatActivity implements View.OnClickLi
             Usuario usuarioRegistro = new Usuario(binding.txtUsuarioRegistro.getText().toString(),
                     binding.txtContrasennaRegistro.getText().toString(),
                     binding.txtEmail.getText().toString());
-            if(Servicio.getServicio().obtenerUsuario(usuarioRegistro) != null){
+
+            if(Servicio.getServicio().obtenerUsuario(usuarioRegistro) == true){
                 AlertDialog.Builder dialogo1 = new AlertDialog.Builder(this);
                 dialogo1.setTitle("Error");
                 dialogo1.setMessage("Usuario ya registrado");

@@ -80,8 +80,6 @@ public class PedidoIngredientes extends AppCompatActivity implements View.OnClic
             listaIngredientes.add(TipoIngredientes.QUESO_FETA);
 
         Kebab kebab= new Kebab(listaIngredientes,tipoKebab,tipoCarne,tipoSalsa);
-        Servicio.getServicio().agregarKebab(kebab);
-
         Intent i = new Intent(PedidoIngredientes.this, Carrito.class);
         i.putExtra("Kebab",kebab);
         startActivity(i);

@@ -1,5 +1,6 @@
 package com.example.pizzeria.DAOS;
 
+import com.example.pizzeria.ConexionBD.DBHelper;
 import com.example.pizzeria.Recursos.Usuario;
 
 import java.util.ArrayList;
@@ -8,6 +9,7 @@ public class DAOUsuario {
 
     private static ArrayList<Usuario> lista;
     private static DAOUsuario dao;
+    private DBHelper dbHelper;
 
     public static DAOUsuario getInstance(){
 
@@ -18,10 +20,14 @@ public class DAOUsuario {
         return dao;
     }
 
+    public void setDbHelper(DBHelper dbHelper) {
+        this.dbHelper = dbHelper;
+    }
+
     public ArrayList<Usuario> getLista(){
         if(lista.size()==0) {
-            lista.add(new Usuario("admin", "admin", "coreo1"));
-            lista.add(new Usuario("Manu", "1234", "coreo2"));
+            lista.add(new Usuario("admin", "admin", "correo1"));
+            lista.add(new Usuario("Manu", "1234", "correo2"));
         }
         return lista;
     }
@@ -33,6 +39,7 @@ public class DAOUsuario {
         else return null;
     }
     public Boolean agregarUsuario(Usuario usuario){
+        dbHelper.insertarUsuario(usuario);
         if(DAOUsuario.getInstance().getUsuario(usuario)==null){
             lista.add(usuario);
             return true;

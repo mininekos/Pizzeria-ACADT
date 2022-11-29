@@ -1,5 +1,6 @@
 package com.example.pizzeria.DAOS;
 
+import com.example.pizzeria.ConexionBD.DBHelper;
 import com.example.pizzeria.Recursos.Kebab;
 
 import java.util.ArrayList;
@@ -8,6 +9,7 @@ public class DAOKebab {
 
     private static ArrayList<Kebab> lista;
     private static DAOKebab dao;
+    private DBHelper dbHelper;
 
     public static DAOKebab getInstance(){
 
@@ -28,7 +30,7 @@ public class DAOKebab {
         }
         else return null;
     }
-    public Boolean agregarKebab(Kebab kebab){
+    public Boolean agregarKebab(Kebab kebab,String usuario){
         lista.add(kebab);
         return true;
     }

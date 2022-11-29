@@ -11,6 +11,7 @@ import android.os.Bundle;
 import android.view.View;
 
 import com.example.pizzeria.ActivitysPedido.PedidoTipoKebab;
+import com.example.pizzeria.ConexionBD.DBHelper;
 import com.example.pizzeria.Configuracion.Configuracion;
 import com.example.pizzeria.Recursos.Usuario;
 import com.example.pizzeria.Servicio.Servicio;
@@ -21,6 +22,7 @@ public class InicioSesion extends AppCompatActivity implements View.OnClickListe
     private ActivityInicioSesionBinding binding;
     private SharedPreferences preferencias;
     private SharedPreferences.Editor editor;
+    private DBHelper dbHelper;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -40,6 +42,8 @@ public class InicioSesion extends AppCompatActivity implements View.OnClickListe
             binding.checkRecuerdame.setChecked(true);
         }
 
+        dbHelper=new DBHelper(InicioSesion.this);
+        Servicio.getServicio().setDbHelper(dbHelper);
     }
 
 
@@ -63,8 +67,9 @@ public class InicioSesion extends AppCompatActivity implements View.OnClickListe
         }
         else {
             Usuario usuarioInicio= new Usuario(binding.txtUsuarioInicio.getText().toString(),binding.txtContrasennaInicio.getText().toString());
-            if (Servicio.getServicio().obtenerUsuario(usuarioInicio) != null) {
 
+            if (Servicio.getServicio().obtenerUsuario(usuarioInicio) == true) {
+                Servicio.getServicio().setUsuarioRegistrado(usuarioInicio);
                 editor.putString("NombreUsuario",binding.txtUsuarioInicio.getText().toString());
                 editor.putString("ContrasennaUsuario",binding.txtContrasennaInicio.getText().toString());
                 editor.commit();

@@ -1,5 +1,6 @@
 package com.example.pizzeria.Servicio;
 
+import com.example.pizzeria.ConexionBD.DBHelper;
 import com.example.pizzeria.DAOS.DAOKebab;
 import com.example.pizzeria.DAOS.DAOKebabPredeterminados;
 import com.example.pizzeria.DAOS.DAOUsuario;
@@ -12,27 +13,37 @@ public class Servicio {
 
 
     private static Servicio servicio;
-
+    private Usuario usuarioRegistrado;
+    private DBHelper dbHelper;
     public Servicio() {
     }
 
     public static Servicio getServicio(){
+
         if(servicio==null){
             servicio=new Servicio();
         }
         return servicio;
     }
 
-    public Usuario obtenerUsuario(Usuario usuario){
+    public Usuario getUsuarioRegistrado() {
+        return usuarioRegistrado;
+    }
 
-        return DAOUsuario.getInstance().getUsuario(usuario);
+    public void setDbHelper(DBHelper dbHelper) {
+        this.dbHelper = dbHelper;
+        DAOUsuario.getInstance().setDbHelper(dbHelper);
+    }
+
+    public void setUsuarioRegistrado(Usuario usuarioRegistrado) {
+        this.usuarioRegistrado = usuarioRegistrado;
+    }
+
+    public Boolean obtenerUsuario(Usuario usuario){
+        return dbHelper.buscarUsuario(usuario);
     }
 
     public Kebab obtenerKebab(Kebab kebab){
-        return DAOKebab.getInstance().getKebab(kebab);
-    }
-
-    public Kebab obtenerKebabPredeterminado(Kebab kebab){
         return DAOKebab.getInstance().getKebab(kebab);
     }
 
@@ -40,16 +51,8 @@ public class Servicio {
         return DAOUsuario.getInstance().agregarUsuario(usuario);
     }
 
-    public Boolean agregarKebab(Kebab kebab){
-        return DAOKebab.getInstance().agregarKebab(kebab);
-    }
-
-    public Boolean agregarKebabPredeterminado(Kebab kebab){
-        return DAOKebabPredeterminados.getInstance().agregarKebab(kebab);
-    }
-
-    public Boolean borrarKebab(){
-        return DAOKebab.getInstance().eliminarultimoKebab();
+    public Boolean agregarKebab(Kebab kebab,String usuario){
+        return DAOKebab.getInstance().agregarKebab(kebab,usuario);
     }
 
     public Kebab obtenerFavorito(){
