@@ -1,6 +1,7 @@
 package com.example.pizzeria.DAOS;
 
 import com.example.pizzeria.ConexionBD.DBHelper;
+import com.example.pizzeria.Enums.TipoIngredientes;
 import com.example.pizzeria.Recursos.Kebab;
 
 import java.util.ArrayList;
@@ -20,6 +21,10 @@ public class DAOKebab {
         return dao;
     }
 
+    public void setDbHelper(DBHelper dbHelper) {
+        this.dbHelper = dbHelper;
+    }
+
     public ArrayList<Kebab> getLista(){
         return lista;
     }
@@ -32,6 +37,12 @@ public class DAOKebab {
     }
     public Boolean agregarKebab(Kebab kebab,String usuario){
         lista.add(kebab);
+        dbHelper.insertarKebab(kebab, usuario);
+        int idKebab=dbHelper.idKebab();
+        for (TipoIngredientes ingrediente: kebab.getIngredientes()) {
+            dbHelper.insertarIgrediente(ingrediente.ordinal(),idKebab);
+        }
+
         return true;
     }
 
@@ -44,7 +55,8 @@ public class DAOKebab {
         return lista.size();
     }
 
-    public boolean eleminarFavorito(){
+    public boolean eleminarFavorito(String usuario){
+        dbHelper.limpiarFavorito(usuario);
         for(int ind=0;ind<lista.size();ind++){
             lista.get(ind).setFavorito(false);
         }

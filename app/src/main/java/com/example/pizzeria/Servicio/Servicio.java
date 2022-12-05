@@ -33,6 +33,7 @@ public class Servicio {
     public void setDbHelper(DBHelper dbHelper) {
         this.dbHelper = dbHelper;
         DAOUsuario.getInstance().setDbHelper(dbHelper);
+        DAOKebab.getInstance().setDbHelper(dbHelper);
     }
 
     public void setUsuarioRegistrado(Usuario usuarioRegistrado) {
@@ -64,8 +65,8 @@ public class Servicio {
         return null;
     }
 
-    public Boolean limpiarFavorito(){
-        return DAOKebab.getInstance().eleminarFavorito();
+    public Boolean limpiarFavorito(String usuario){
+        return DAOKebab.getInstance().eleminarFavorito(usuario);
     }
 
     public Boolean ponerFavirito(){

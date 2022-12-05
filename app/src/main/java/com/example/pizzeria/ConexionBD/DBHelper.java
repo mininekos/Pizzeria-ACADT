@@ -203,4 +203,31 @@ public class DBHelper extends SQLiteOpenHelper {
 
     }
 
+    public Integer idKebab(){
+        Integer id=0;
+        SQLiteDatabase bbdd = this.getWritableDatabase();
+        Cursor c = bbdd.rawQuery("Select MAX(Id)\n" +
+                "FROM Kebab\n",null);
+
+        if (c.moveToFirst()){
+            id=c.getInt(0);
+            System.out.println(id+"     hola");
+        }
+        if(id==null){
+            id=1;
+        }
+        c.close();
+        return id;
+
+    }
+
+    public long limpiarFavorito(String usuario){
+        long id=0;
+        SQLiteDatabase bbdd = this.getWritableDatabase();
+        Cursor c = bbdd.rawQuery("Update Kebab SET Favorito=1" +
+                "where Id_usuario="+usuario+"",null);
+        c.moveToFirst();
+        c.close();
+        return id;
+    }
 }

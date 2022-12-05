@@ -35,12 +35,16 @@ public class Carrito extends AppCompatActivity implements View.OnClickListener {
         kebab=(Kebab) getIntent().getSerializableExtra("Kebab");
         binding.txtPedido.setText(kebab.toString());
         binding.txtPrecio.setText(kebab.obtenerPrecio().toString());
+        if(kebab.getNombre()==null){
+            kebab.setNombre("");
+        }
 
     }
 
     @Override
     public void onClick(View view) {
         if(view.getId()==R.id.btnFinalizarCarrito){
+
             Servicio.getServicio().agregarKebab(kebab,Servicio.getServicio().getUsuarioRegistrado().getNombre());
             Intent intent = new Intent(getApplicationContext(), MenuPrincipal.class);
             intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
@@ -48,7 +52,7 @@ public class Carrito extends AppCompatActivity implements View.OnClickListener {
 
         }
         if(view.getId()==R.id.btnFavorito){
-            Servicio.getServicio().limpiarFavorito();
+            Servicio.getServicio().limpiarFavorito(Servicio.getServicio().getUsuarioRegistrado().getNombre());
             Servicio.getServicio().agregarKebab(kebab,Servicio.getServicio().getUsuarioRegistrado().getNombre());
             Servicio.getServicio().ponerFavirito();
             Intent intent = new Intent(getApplicationContext(), MenuPrincipal.class);
