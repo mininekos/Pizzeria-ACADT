@@ -1,6 +1,8 @@
 package com.example.pizzeria.ActivitysPedido;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Context;
 import android.content.Intent;
@@ -26,6 +28,10 @@ public class PedidoPredeterminado extends AppCompatActivity implements View.OnCl
     private ActivityPedidoPredeterminadoBinding binding;
     private SharedPreferences preferencias;
     private ArrayList<Kebab> listaKebabPred;
+    private AdapterDatos adapterDatos;
+    private LinearLayoutManager layoutManager;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -36,8 +42,13 @@ public class PedidoPredeterminado extends AppCompatActivity implements View.OnCl
         getSupportActionBar().hide();
         preferencias=getSharedPreferences("Todo", Context.MODE_PRIVATE);
         binding.txtUsuarioRegistradoPredeterminado.setText(preferencias.getString("NombreUsuario"," "));
-        cargarLista();
         binding.btnVolverPredeterminado.setOnClickListener(this);
+        layoutManager = new LinearLayoutManager(this);
+        binding.recicleViewKebabs.setLayoutManager(layoutManager);
+        adapterDatos = new AdapterDatos(this);
+        binding.recicleViewKebabs.setAdapter(adapterDatos);
+        cargarLista();
+
     }
 
     private void cargarLista() {
@@ -61,6 +72,11 @@ public class PedidoPredeterminado extends AppCompatActivity implements View.OnCl
                     }
                 }
         );
+
+        adapterDatos.add(new Item(getDrawable(R.drawable.durum),lista.get(0)));
+        adapterDatos.add(new Item(getDrawable(R.drawable.durum),lista.get(1)));
+        adapterDatos.add(new Item(getDrawable(R.drawable.durum),lista.get(2)));
+        adapterDatos.add(new Item(getDrawable(R.drawable.durum),lista.get(3)));
 
     }
 

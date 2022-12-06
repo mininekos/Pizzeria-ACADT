@@ -54,7 +54,8 @@ public class Carrito extends AppCompatActivity implements View.OnClickListener {
         if(view.getId()==R.id.btnFavorito){
             Servicio.getServicio().limpiarFavorito(Servicio.getServicio().getUsuarioRegistrado().getNombre());
             Servicio.getServicio().agregarKebab(kebab,Servicio.getServicio().getUsuarioRegistrado().getNombre());
-            Servicio.getServicio().ponerFavirito();
+            //Servicio.getServicio().ponerFavirito();
+            Servicio.getServicio().ponerFavoritoDB();
             Intent intent = new Intent(getApplicationContext(), MenuPrincipal.class);
             intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
             startActivity(intent);

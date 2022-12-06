@@ -55,7 +55,7 @@ public class MenuPedido extends AppCompatActivity implements View.OnClickListene
 
     private void favorito() {
         if(preferencias.getBoolean("Favorito",true)){
-            Kebab kebab= Servicio.getServicio().obtenerFavorito();
+            Kebab kebab= Servicio.getServicio().obtnerKebabFavoritoDB();
             Intent i = new Intent(MenuPedido.this, Carrito.class);
             i.putExtra("Kebab",kebab);
             startActivity(i);

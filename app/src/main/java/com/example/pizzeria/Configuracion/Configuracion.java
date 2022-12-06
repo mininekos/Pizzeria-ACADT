@@ -73,7 +73,7 @@ public class Configuracion extends AppCompatActivity implements View.OnClickList
         SharedPreferences.Editor editor = preferencias.edit();
 
         if(b==true){
-            if(Servicio.getServicio().obtenerFavorito()==null){
+            if(Servicio.getServicio().obtnerKebabFavoritoDB()==null){
                 AlertDialog.Builder dialogo1 = new AlertDialog.Builder(this);
                 dialogo1.setTitle("Error");
                 dialogo1.setMessage("No hay kebab favorito");

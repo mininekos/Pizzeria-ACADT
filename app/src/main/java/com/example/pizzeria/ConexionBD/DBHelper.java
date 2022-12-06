@@ -51,9 +51,8 @@ public class DBHelper extends SQLiteOpenHelper {
         sqLiteDatabase.execSQL("CREATE TABLE \"Ingrediente\" (\n" +
                 "\t\"Id_Kebab\"\tINTEGER NOT NULL,\n" +
                 "\t\"Id_Ingrediente\"\tINTEGER NOT NULL,\n" +
-                "\tFOREIGN KEY(\"Id_Kebab\") REFERENCES \"Kebab\"(\"Id\"),\n" +
-                "\tPRIMARY KEY(\"Id_Ingrediente\")\n" +
-                ")");
+                "\tFOREIGN KEY(\"Id_Kebab\") REFERENCES \"Kebab\"(\"Id\")\n" +
+                ");");
 
         ContentValues values = new ContentValues();
         values.put("Nombre","Manu");
@@ -211,7 +210,7 @@ public class DBHelper extends SQLiteOpenHelper {
 
         if (c.moveToFirst()){
             id=c.getInt(0);
-            System.out.println(id+"     hola");
+            System.out.println(id+"");
         }
         if(id==null){
             id=1;
@@ -224,10 +223,44 @@ public class DBHelper extends SQLiteOpenHelper {
     public long limpiarFavorito(String usuario){
         long id=0;
         SQLiteDatabase bbdd = this.getWritableDatabase();
-        Cursor c = bbdd.rawQuery("Update Kebab SET Favorito=1" +
-                "where Id_usuario="+usuario+"",null);
+        Cursor c = bbdd.rawQuery("Update Kebab SET Favorito=0" +
+                " where Id_usuario=\""+usuario+"\"",null);
         c.moveToFirst();
         c.close();
         return id;
     }
+
+    public long ponerFavorito(int kebab){
+        long id=0;
+        SQLiteDatabase bbdd = this.getWritableDatabase();
+        System.out.println(kebab);
+        Cursor c = bbdd.rawQuery("Update Kebab SET Favorito=1" +
+                " where Id="+kebab+"",null);
+        c.moveToFirst();
+        c.close();
+        return id;
+    }
+
+    public Kebab obtnerKebabFavorito(Usuario usuario){
+        Kebab kebab=null;
+        SQLiteDatabase bbdd = this.getWritableDatabase();
+        ArrayList<Kebab> lista= new ArrayList<Kebab>();
+        Cursor c = bbdd.rawQuery("Select * from Kebab where favorito=1 and "+
+                "Id_usuario=\"" +usuario.getNombre()+"\"",null);
+        ArrayList<TipoIngredientes> ingredientes = new ArrayList<TipoIngredientes>();
+        //Así podemos recorrer un cursor
+        if(c.moveToFirst()){
+                //ingredientes=buscarIngredientes(c.getInt(0));
+                kebab=new Kebab(c.getString(1),ingredientes,TipoKebab.values()[c.getInt(5)],
+                        TipoCarne.values()[c.getInt(4)], TipoSalsa.values()[c.getInt(3)]);
+                if(c.getInt(2)==1) {
+                    kebab.setFavorito(true);
+                }
+                lista.add(kebab);
+        }
+        c.close();
+        return kebab;
+    }
+
+
 }

@@ -49,11 +49,15 @@ public class Servicio {
     }
 
     public Boolean agregarUsuario(Usuario usuario){
-        return DAOUsuario.getInstance().agregarUsuario(usuario);
+        dbHelper.insertarUsuario(usuario);
+        return true;
+        //return DAOUsuario.getInstance().agregarUsuario(usuario);
     }
 
     public Boolean agregarKebab(Kebab kebab,String usuario){
-        return DAOKebab.getInstance().agregarKebab(kebab,usuario);
+        dbHelper.insertarKebab(kebab, usuario);
+        //return DAOKebab.getInstance().agregarKebab(kebab,usuario);
+        return true;
     }
 
     public Kebab obtenerFavorito(){
@@ -65,8 +69,20 @@ public class Servicio {
         return null;
     }
 
+    public Kebab obtnerFavoritoDB(){
+        ArrayList<Kebab> lista= dbHelper.obtnerKebabs();
+        for(int ind=0;ind< lista.size();ind++){
+            if(lista.get(ind).getFavorito()==true)
+                return lista.get(ind);
+        }
+
+        return null;
+    }
+
     public Boolean limpiarFavorito(String usuario){
-        return DAOKebab.getInstance().eleminarFavorito(usuario);
+        dbHelper.limpiarFavorito(usuario);
+        //return DAOKebab.getInstance().eleminarFavorito(usuario);
+        return true;
     }
 
     public Boolean ponerFavirito(){
@@ -74,11 +90,18 @@ public class Servicio {
         return true;
     }
 
+    public Boolean ponerFavoritoDB(){
+        dbHelper.ponerFavorito(dbHelper.idKebab());
+        return true;
+    }
+
     public ArrayList<Kebab> obtenerListaKebabPredeterminado(){
         return DAOKebabPredeterminados.getInstance().getLista();
     }
 
-    public void ponerFavorito(Kebab kebab){
-        DAOKebab.getInstance().getKebab(kebab).setFavorito(true);
+    public Kebab obtnerKebabFavoritoDB(){
+
+        return dbHelper.obtnerKebabFavorito(usuarioRegistrado);
     }
+
 }

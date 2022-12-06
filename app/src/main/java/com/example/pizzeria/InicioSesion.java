@@ -2,6 +2,7 @@ package com.example.pizzeria;
 
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.constraintlayout.widget.ConstraintLayout;
 
 import android.content.Context;
 import android.content.DialogInterface;
@@ -10,9 +11,7 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 
-import com.example.pizzeria.ActivitysPedido.PedidoTipoKebab;
 import com.example.pizzeria.ConexionBD.DBHelper;
-import com.example.pizzeria.Configuracion.Configuracion;
 import com.example.pizzeria.Recursos.Usuario;
 import com.example.pizzeria.Servicio.Servicio;
 import com.example.pizzeria.databinding.ActivityInicioSesionBinding;
