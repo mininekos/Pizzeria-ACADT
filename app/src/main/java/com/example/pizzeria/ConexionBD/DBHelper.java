@@ -150,7 +150,7 @@ public class DBHelper extends SQLiteOpenHelper {
         //Así podemos recorrer un cursor
         if(c.moveToFirst()){
             while(c.isAfterLast()==false){
-                ingredientes=buscarIngredientes(c.getInt(0));
+                //ingredientes=buscarIngredientes(c.getInt(0));
                 Kebab kebab=new Kebab(c.getString(1),ingredientes,TipoKebab.values()[c.getInt(5)],
                         TipoCarne.values()[c.getInt(4)], TipoSalsa.values()[c.getInt(3)]);
                 if(c.getInt(2)==1) {
@@ -167,7 +167,7 @@ public class DBHelper extends SQLiteOpenHelper {
     public ArrayList<TipoIngredientes> buscarIngredientes(int id){
         SQLiteDatabase bbdd = this.getWritableDatabase();
         ArrayList<TipoIngredientes> lista= new ArrayList<TipoIngredientes>();
-        Cursor c = bbdd.rawQuery("Select * from Ingrediente",null);
+        Cursor c = bbdd.rawQuery("Select * from Ingrediente where id_kebab=\""+id+"\"",null);
 
         //Así podemos recorrer un cursor
         if(c.moveToFirst()){
@@ -210,7 +210,7 @@ public class DBHelper extends SQLiteOpenHelper {
 
         if (c.moveToFirst()){
             id=c.getInt(0);
-            System.out.println(id+"");
+            System.out.println(id+" Max id");
         }
         if(id==null){
             id=1;
@@ -250,7 +250,7 @@ public class DBHelper extends SQLiteOpenHelper {
         ArrayList<TipoIngredientes> ingredientes = new ArrayList<TipoIngredientes>();
         //Así podemos recorrer un cursor
         if(c.moveToFirst()){
-                //ingredientes=buscarIngredientes(c.getInt(0));
+                ingredientes=buscarIngredientes(c.getInt(0));
                 kebab=new Kebab(c.getString(1),ingredientes,TipoKebab.values()[c.getInt(5)],
                         TipoCarne.values()[c.getInt(4)], TipoSalsa.values()[c.getInt(3)]);
                 if(c.getInt(2)==1) {
@@ -262,5 +262,21 @@ public class DBHelper extends SQLiteOpenHelper {
         return kebab;
     }
 
+    public Integer idKebabFavorito(){
+        Integer id=0;
+        SQLiteDatabase bbdd = this.getWritableDatabase();
+        Cursor c = bbdd.rawQuery("Select Id\n" +
+                "FROM Kebab where favorito=1",null);
 
+        if (c.moveToFirst()){
+            id=c.getInt(0);
+            System.out.println(id+" Kebab favorito");
+        }
+        if(id==null){
+            id=1;
+        }
+        c.close();
+        return id;
+
+    }
 }

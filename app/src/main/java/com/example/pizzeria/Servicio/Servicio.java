@@ -4,6 +4,7 @@ import com.example.pizzeria.ConexionBD.DBHelper;
 import com.example.pizzeria.DAOS.DAOKebab;
 import com.example.pizzeria.DAOS.DAOKebabPredeterminados;
 import com.example.pizzeria.DAOS.DAOUsuario;
+import com.example.pizzeria.Enums.TipoIngredientes;
 import com.example.pizzeria.Recursos.Kebab;
 import com.example.pizzeria.Recursos.Usuario;
 
@@ -56,6 +57,10 @@ public class Servicio {
 
     public Boolean agregarKebab(Kebab kebab,String usuario){
         dbHelper.insertarKebab(kebab, usuario);
+        int idKebab=dbHelper.idKebab();
+        for (TipoIngredientes ingrediente: kebab.getIngredientes()) {
+            dbHelper.insertarIgrediente(ingrediente.ordinal(),idKebab);
+        }
         //return DAOKebab.getInstance().agregarKebab(kebab,usuario);
         return true;
     }

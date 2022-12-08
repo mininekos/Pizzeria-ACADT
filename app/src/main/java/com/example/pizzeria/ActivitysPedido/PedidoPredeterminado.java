@@ -57,21 +57,6 @@ public class PedidoPredeterminado extends AppCompatActivity implements View.OnCl
         for (Kebab kb: Servicio.getServicio().obtenerListaKebabPredeterminado()) {
             lista.add(kb.getNombre());
         }
-        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1,lista);
-        binding.listaKebabsPredeterminados.setAdapter(adapter);
-        binding.listaKebabsPredeterminados.setOnItemClickListener(
-                new AdapterView.OnItemClickListener(){
-
-                    @Override
-                    public void onItemClick(AdapterView<?> adapterView, View view, int posicion, long l) {
-
-                        Intent intent = new Intent(PedidoPredeterminado.this,Carrito.class);
-                        Kebab kebab = listaKebabPred.get(posicion);
-                        intent.putExtra("Kebab",kebab);
-                        startActivity(intent);
-                    }
-                }
-        );
 
         adapterDatos.add(new Item(getDrawable(R.drawable.durum),lista.get(0)));
         adapterDatos.add(new Item(getDrawable(R.drawable.durum),lista.get(1)));
